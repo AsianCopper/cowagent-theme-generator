@@ -3,7 +3,6 @@
 """
 CowAgent 主题生成器
 根据用户上传的壁纸自动生成适配的白天/夜晚主题
-作者: 亚洲铜 x BocchiBot
 """
 
 import sys
@@ -19,7 +18,6 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QPixmap, QImage, QColor, QPalette, QFont
-
 
 class ColorExtractor:
     """从图片中提取颜色"""
@@ -84,7 +82,6 @@ class ColorExtractor:
             return (30, 30, 30)  # 深色文字
         else:
             return (245, 245, 245)  # 浅色文字
-
 
 class ThemeGenerator:
     """生成 CowAgent 主题文件"""
@@ -283,7 +280,6 @@ class ThemeGenerator:
             'background': bg_path
         }
 
-
 class GeneratorThread(QThread):
     """后台生成线程"""
     finished = pyqtSignal(dict)
@@ -301,7 +297,6 @@ class GeneratorThread(QThread):
             self.finished.emit(result)
         except Exception as e:
             self.error.emit(str(e))
-
 
 class ThemeGeneratorApp(QMainWindow):
     """主题生成器主窗口"""
@@ -425,7 +420,7 @@ class ThemeGeneratorApp(QMainWindow):
         layout.addStretch()
         
         # 底部信息
-        footer = QLabel("By: 亚洲铜 x BocchiBot 💝")
+        footer = QLabel("CowAgent Theme Generator")
         footer.setAlignment(Qt.AlignmentFlag.AlignCenter)
         footer.setStyleSheet("color: #888; font-size: 11px;")
         layout.addWidget(footer)
@@ -648,7 +643,6 @@ class ThemeGeneratorApp(QMainWindow):
         except Exception as e:
             QMessageBox.critical(self, "安装失败", str(e))
 
-
 def main():
     app = QApplication(sys.argv)
     
@@ -659,7 +653,6 @@ def main():
     window.show()
     
     sys.exit(app.exec())
-
 
 if __name__ == '__main__':
     main()
