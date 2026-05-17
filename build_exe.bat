@@ -4,7 +4,6 @@ title CowAgent 主题生成器 - 打包工具
 
 echo 🎸 =========================================
 echo    CowAgent 主题生成器 - EXE 打包工具
-echo    By: 亚洲铜 x BocchiBot
 echo =========================================
 echo.
 
